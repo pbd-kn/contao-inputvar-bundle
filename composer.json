@@ -14,8 +14,7 @@
             "homepage": "https://contao.org/contributors"
         },
         {
-            "name": "Contao Community",
-            "homepage": "https://contao.org/contributors"
+            "name": "pbd-kn"
         }
     ],
     "require": {
@@ -35,21 +34,21 @@
         "symfony/phpunit-bridge": "^4.4 || ^5.1"
     },
     "extra": {
-        "contao-manager-plugin": "Contao\\SkeletonBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "PBD-KN\\ContaoInputVarBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {
-            "Contao\\SkeletonBundle\\": "src/"
+            "PBD-KN\\ContaoInputVarBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Contao\\SkeletonBundle\\Tests\\": "tests/"
+            "PBD-KN\\ContaoInputVarBundle\\Tests\\": "tests/"
         }
     },
     "support": {
-        "issues": "https://github.com/contao/skeleton-bundle/issues",
-        "source": "https://github.com/contao/skeleton-bundle"
+        "issues": "https://github.com/pbd-kn/contao-inputvar-bundle/issues",
+        "source": "https://github.com/acme/contao-inputvar-bundle"
     },
     "scripts": {
         "cs-fixer": [
