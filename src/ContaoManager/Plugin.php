@@ -16,14 +16,15 @@ use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use Contao\SkeletonBundle\ContaoSkeletonBundle;
+//use Contao\SkeletonBundle\ContaoSkeletonBundle;
+use PBD-KN\InputVar\ContaoInputVarBundle;
 
 class Plugin implements BundlePluginInterface
 {
     public function getBundles(ParserInterface $parser)
     {
         return [
-            BundleConfig::create(ContaoSkeletonBundle::class)
+            BundleConfig::create(ContaoInputVarBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }

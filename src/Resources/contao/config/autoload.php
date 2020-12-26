@@ -25,9 +25,19 @@
  * @author     Andreas Schempp <andreas.schempp@terminal42.ch>
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
+/**
+ * Register the namespaces
+ */
+ClassLoader::addNamespaces(array
+(
+	'InputVar'
+));
 
 
 /**
- * Hooks
+ * Register the classes
  */
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('InputVar', 'replaceInputVars');
+ClassLoader::addClasses(array
+(
+	'InputVar\InputVar' => 'system/modules/inputvar/InputVar.php',
+));

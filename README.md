@@ -1,10 +1,10 @@
-# Contao 4 skeleton bundle
+# Contao 4 Inputvar bundle
 
 Contao is an Open Source PHP Content Management System for people who want a
 professional website that is easy to maintain. Visit the [project website][1]
 for more information.
 
-You can use the skeleton bundle as basis for your own Contao bundle.
+inputvar stellt inserttags zum behandelvon GET POST und SESSION Varibale zur Verfügung
 
 ## Install
 

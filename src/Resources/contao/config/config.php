@@ -28,9 +28,6 @@
 
 
 /**
- * Register the classes
+ * Hooks
  */
-ClassLoader::addClasses(array
-(
-	'InputVar' => 'system/modules/inputvar/InputVar.php',
-));
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('InputVar\InputVar', 'replaceInputVars');
