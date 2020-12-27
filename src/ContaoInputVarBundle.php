@@ -16,4 +16,7 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ContaoInputVarBundle extends Bundle
 {
+
+
+
 }
