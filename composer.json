@@ -15,7 +15,7 @@
         },
         {
             "name": "pbd-kn",
-            "email" "pb-contao@gmx.de"
+            "email": "pb-contao@gmx.de"
         }
     ],
     "require": {
