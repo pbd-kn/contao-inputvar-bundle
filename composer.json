@@ -14,7 +14,8 @@
             "homepage": "https://contao.org/contributors"
         },
         {
-            "name": "pbd-kn"
+            "name": "pbd-kn",
+            "email" "pb-contao@gmx.de"
         }
     ],
     "require": {
@@ -34,7 +35,7 @@
         "symfony/phpunit-bridge": "^4.4 || ^5.1"
     },
     "extra": {
-        "contao-manager-plugin": "PBD-KN\\ContaoInputVarBundle\\ContaoManager\\Pluginx"  
+        "contao-manager-plugin": "PBD-KN\\ContaoInputVarBundle\\ContaoManager\\Plugin"  
     },
     "autoload": {
         "psr-4": {
@@ -48,7 +49,7 @@
     },
     "support": {
         "issues": "https://github.com/pbd-kn/contao-inputvar-bundle/issues",
-        "source": "https://github.com/acme/contao-inputvar-bundle"
+        "source": "https://github.com/pbd-kn/contao-inputvar-bundle"
     },
     "scripts": {
         "cs-fixer": [
