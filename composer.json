@@ -15,9 +15,13 @@
         },
         {
             "name": "pbd-kn",
-            "email": "pb-contao@gmx.de"
+            "email": "pb-contao@gmx.de",
+            "role": "Developer"
         }
     ],
+    "support": {
+        "email": "pb-contao@gmx.de"
+    },
     "require": {
         "php": "^7.2 || ^8.0",
         "contao/core-bundle": "^4.9",

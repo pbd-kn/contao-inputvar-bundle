@@ -15,7 +15,8 @@ use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
-use PBD-KN\ContaoInputVarBundle\ContaoManager;
+use PBD-KN\ContaoInputVarBundle\ContaoInputVarBundle;
+//use Acme\ContaoHelloWorldBundle\ContaoHelloWorldBundle;
 
 class Plugin implements BundlePluginInterface
 {
