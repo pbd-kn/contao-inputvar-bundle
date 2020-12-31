@@ -43,12 +43,12 @@
     },
     "autoload": {
         "psr-4": {
-            "PBD-KN\\ContaoInputVarBundle\\": "src/"
+            "PBD-KN\\InputVarBundle\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "PBD-KN\\ContaoInputVarBundle\\Tests\\": "tests/"
+            "PBD-KN\\InputVarBundle\\Tests\\": "tests/"
         }
     },
     "support": {
