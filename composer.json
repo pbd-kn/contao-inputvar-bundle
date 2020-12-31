@@ -39,7 +39,7 @@
         "symfony/phpunit-bridge": "^4.4 || ^5.1"
     },
     "extra": {
-        "contao-manager-plugin": "Contao\\InputVarBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "PBD-KN\\InputVarBundle\\ContaoManager\\Plugin"
     },
     "autoload": {
         "psr-4": {

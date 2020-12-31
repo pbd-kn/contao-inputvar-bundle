@@ -11,7 +11,7 @@ declare(strict_types=1);
  */
 
 
-namespace Contao\InputVarBundle\ContaoManager;
+namespace PBD-KN\InputVarBundle\ContaoManager;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
