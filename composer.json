@@ -40,7 +40,6 @@
     },
     "extra": {
         "contao-manager-plugin": "Contao\\InputVarBundle\\ContaoManager\\Plugin"
-
     },
     "autoload": {
         "psr-4": {
