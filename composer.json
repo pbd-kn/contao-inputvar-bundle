@@ -38,17 +38,17 @@
         "phpunit/phpunit": "^8.4 || ^9",
         "symfony/phpunit-bridge": "^4.4 || ^5.1"
     },
-    "extra": {
-        "contao-manager-plugin": "PBD-KN\\ContaoInputVarBundle\\ContaoManager\\Plugin"
-    },
     "autoload": {
         "psr-4": {
-            "PBD-KN\\ContaoInputVarBundle\\": "src/"
+            "PBDKN\\InputVarBundle\\":"src/"
         }
+    },
+    "extra": {
+        "contao-manager-plugin": "PBDKN\\InputVarBundle\\ContaoManager\\Plugin"
     },
     "autoload-dev": {
         "psr-4": {
-            "PBD-KN\\ContaoInputVarBundle\\Tests\\": "tests/"
+            "PBDKN\\InputVarBundle\\Tests\\": "tests/"
         }
     },
     "support": {

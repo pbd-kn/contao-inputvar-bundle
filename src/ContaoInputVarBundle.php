@@ -10,10 +10,14 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
-namespace PBD-KN\ContaoInputVarBundle;
+namespace PBDKN\InputVarBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ContaoInputVarBundle extends Bundle
 {
+    public function __construct()
+    {
+        echo "constructor PBDKN\InputVarBundle\ContaoInputVarBundle";      // PBD ob das geht ???
+    }
 }
