@@ -26,7 +26,7 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
-namespace InputVar;
+namespace PBDKN\InputVarBundle;
 
 class InputVar extends Frontend
 {
