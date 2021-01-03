@@ -16,8 +16,10 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class ContaoInputVarBundle extends Bundle
 {
+/*  
     public function __construct()
     {
         echo "constructor PBDKN\InputVarBundle\ContaoInputVarBundle";      // PBD ob das geht ???
     }
+*/
 }
