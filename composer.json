@@ -40,15 +40,15 @@
     },
     "autoload": {
         "psr-4": {
-            "PBDKN\\InputVarBundle\\":"src/"
+            "PBDKN\\ContaoInputVarBundle\\":"src/"
         }
     },
     "extra": {
-        "contao-manager-plugin": "PBDKN\\InputVarBundle\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "PBDKN\\ContaoInputVarBundle\\ContaoManager\\Plugin"
     },
     "autoload-dev": {
         "psr-4": {
-            "PBDKN\\InputVarBundle\\Tests\\": "tests/"
+            "PBDKN\\ContaoInputVarBundle\\Tests\\": "tests/"
         }
     },
     "support": {

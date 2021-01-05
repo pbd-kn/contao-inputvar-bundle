@@ -11,13 +11,13 @@ declare(strict_types=1);
  */
 
 
-namespace PBDKN\InputVarBundle\ContaoManager;
+namespace PBDKN\ContaoInputVarBundle\ContaoManager;
 
 use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
 use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\CoreBundle\ContaoCoreBundle;
-use PBDKN\InputVarBundle\ContaoInputVarBundle;
+use PBDKN\ContaoInputVarBundle\ContaoInputVarBundle;
 
 //use Acme\ContaoHelloWorldBundle\ContaoHelloWorldBundle;
 //            BundleConfig::create(ContaoInputVarBundle::class)
