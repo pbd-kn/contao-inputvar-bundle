@@ -19,9 +19,6 @@ use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
 use Contao\CoreBundle\ContaoCoreBundle;
 use PBDKN\ContaoInputVarBundle\ContaoInputVarBundle;
 
-//use Acme\ContaoHelloWorldBundle\ContaoHelloWorldBundle;
-//            BundleConfig::create(ContaoInputVarBundle::class)
-
 class Plugin implements BundlePluginInterface
 {
     public function getBundles(ParserInterface $parser)
