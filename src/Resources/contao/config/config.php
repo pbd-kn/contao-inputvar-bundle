@@ -30,4 +30,4 @@
 /**
  * Hooks
  */
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('InputVar\InputVar', 'replaceInputVars');
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('PBDKB\ContaoInputVarBundle\InputVar', 'replaceInputVars');
