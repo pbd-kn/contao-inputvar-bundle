@@ -41,27 +41,29 @@ class InputVar extends \contao\Frontend
 		switch( $arrTag[0] )
 		{
 			case 'get':
-				$this->import('Input');
+                $varValue = "<br> strtag $strTag";
+                break;
+				$this->import('Contao\Input');
 				$varValue = $this->Input->get($arrTag[1]);
 				break;
 
 			case 'post':
-				$this->import('Input');
+				$this->import('Contao\Input');
 				$varValue = $this->Input->post($arrTag[1]);
 				break;
 
 			case 'postHtml':
-				$this->import('Input');
+				$this->import('Contao\Input');
 				$varValue = $this->Input->postHtml($arrTag[1]);
 				break;
 
 			case 'postRaw':
-				$this->import('Input');
+				$this->import('Contao\Input');
 				$varValue = $this->Input->postRaw($arrTag[1]);
 				break;
 
 			case 'cookie':
-				$this->import('Input');
+				$this->import('Contao\Input');
 				$varValue = $this->Input->cookie($arrTag[1]);
 				break;
 
