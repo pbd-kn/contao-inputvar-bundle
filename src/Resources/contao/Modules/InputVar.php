@@ -28,7 +28,7 @@
 
 namespace PBDKN\ContaoInputVarBundle;
 
-class InputVar extends Frontend
+class InputVar extends \contao\Frontend
 {
 
 	public function replaceInputVars($strTag)
