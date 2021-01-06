@@ -1,5 +1,5 @@
 {
-    "name": "pbd-kn/contaoinputvar-bundle",
+    "name": "pbd-kn/contao-inputvar-bundle",
     "type": "contao-bundle",
     "description": "Manage Inputvariables",
     "homepage": "https://contao.org",
@@ -52,8 +52,8 @@
         }
     },
     "support": {
-        "issues": "https://github.com/pbd-kn/contaoinputvar-bundle/issues",
-        "source": "https://github.com/pbd-kn/contaoinputvar-bundle"
+        "issues": "https://github.com/pbd-kn/contao-inputvar-bundle/issues",
+        "source": "https://github.com/pbd-kn/contao-inputvar-bundle"
     },
     "scripts": {
         "cs-fixer": [
