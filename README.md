@@ -16,31 +16,18 @@ inputvar stellt inserttags zum lesen von GET POST und SESSION Varibale zur Verfu
 Gueltige FunktionsOptions
 
 mysql_real_escape_string
-addslashes
-stripslashes
-standardize
-ampersand
-specialchars
-nl2br
-nl2br_pre
-strtolower
-utf8_strtolower
-strtoupper
-utf8_strtoupper
-ucfirst
-lcfirst
-ucwords
-trim
-rtrim
-ltrim
-utf8_romanize
-strlen
-strrev
 
-decodeEntities
-encodeEmail
-number_format
-number_format_2
+addslashes, stripslashes, standardize, ampersand, specialchars
+
+nl2br, nl2br_pre, strtolower, utf8_strtolower, strtoupper
+
+utf8_strtoupper, ucfirst, lcfirst, ucwords, trim, rtrim, ltrim
+
+utf8_romanize
+
+strlen, strrev
+
+decodeEntities, encodeEmail, number_format, number_format_2
 
 
 
