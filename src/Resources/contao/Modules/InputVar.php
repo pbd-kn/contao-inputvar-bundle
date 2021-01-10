@@ -26,8 +26,7 @@
  * @license    http://opensource.org/licenses/lgpl-3.0.html
  */
 
-namespace PBDKN\ContaoInputVarBundle;
-
+namespace PBDKN\InputVar;
 class InputVar extends \contao\Frontend
 {
 
@@ -43,6 +42,7 @@ class InputVar extends \contao\Frontend
 			case 'get':
 				$this->import('Contao\Input');
 				$varValue = $this->Input->get($arrTag[1]);
+                                $varValue .= "<br>hallo<br>";
 				break;
 
 			case 'post':
