@@ -10,7 +10,7 @@
     </php>
 
     <testsuites>
-        <testsuite name="Contao Inputvar Bundle">
+        <testsuite name="contao-inputvar-bundle">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>
