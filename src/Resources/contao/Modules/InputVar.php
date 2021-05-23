@@ -30,7 +30,6 @@ class InputVar extends \contao\Frontend
             case 'get':
                 $this->import('Contao\Input');
                 $varValue = $this->Input->get($arrTag[1]);
-                                $varValue .= '<br>hallo<br>';
                 break;
 
             case 'post':
