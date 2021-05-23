@@ -14,4 +14,5 @@ declare(strict_types=1);
  * @license    LGPL-3.0-or-later
  */
 
-$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = ['PBDKN\ContaoInputVarBundle\InputVar', 'replaceInputVars'];
+$GLOBALS['TL_HOOKS']['replaceInsertTags'][] = array('PBDKN\ContaoInputVarBundle\Resources\contao\Modules\InputVar', 'replaceInputVars');
+

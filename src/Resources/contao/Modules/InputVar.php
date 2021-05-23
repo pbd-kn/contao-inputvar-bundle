@@ -14,7 +14,7 @@ declare(strict_types=1);
  * @license    LGPL-3.0-or-later
  */
 
-namespace PBDKN\ContaoInputVarBundle;
+namespace PBDKN\ContaoInputVarBundle\Resources\contao\Modules;
 
 class InputVar extends \contao\Frontend
 {
