@@ -36,6 +36,13 @@ class InputVar extends \contao\Frontend
                 $this->import('Contao\Input');
                 $varValue = $this->Input->post($arrTag[1]);
                 break;
+            case 'setpost:'
+                //$_POST Variable setzen
+                if ('' === arrTag[2]) return false;
+                $this->import('Contao\Input');
+                $this->Input->setPost($arrTag[1],$arrTag[2]);
+                $varValue = "";
+                break;
 
             case 'postHtml':
                 $this->import('Contao\Input');

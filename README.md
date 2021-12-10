@@ -5,6 +5,7 @@ professional website that is easy to maintain. Visit the [project website][1]
 for more information.
 
 inputvar stellt inserttags zum lesen von GET POST und SESSION Varibale zur Verfuegung
+und zum setzten von Postvariablen
 
 {{get::var[::opt]}}
 {{post::var[::opt]}}
@@ -12,6 +13,7 @@ inputvar stellt inserttags zum lesen von GET POST und SESSION Varibale zur Verfu
 {{postraw::var[::opt]}}
 {{cookie::cookie[::opt]}}
 {{session::var[::opt]}}
+{{setpost::var::value}
 
 Gueltige FunktionsOptions
 
