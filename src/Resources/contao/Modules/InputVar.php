@@ -36,14 +36,31 @@ class InputVar extends \contao\Frontend
                 $this->import('Contao\Input');
                 $varValue = $this->Input->post($arrTag[1]);
                 break;
-            case 'setpost:'
+            case 'setpost':
                 //$_POST Variable setzen
                 if ('' === arrTag[2]) return false;
                 $this->import('Contao\Input');
                 $this->Input->setPost($arrTag[1],$arrTag[2]);
+                $arrTag[2]="";          // damit nicht aus versehen mit opt ausgewertet
+                $varValue = "";
+                break;
+            case 'setget':
+                //$_GET Variable setzen
+                if ('' === arrTag[2]) return false;
+                $this->import('Contao\Input');
+                $this->Input->setGet($arrTag[1],$arrTag[2]);
+                $arrTag[2]="";          // damit nicht aus versehen mit opt ausgewertet
                 $varValue = "";
                 break;
 
+            case 'setcookie':
+                //$_COOKIE Variable setzen
+                if ('' === arrTag[2]) return false;
+                $this->import('Contao\Input');
+                $this->Input->cookie($arrTag[1],$arrTag[2]);
+                $arrTag[2]="";          // damit nicht aus versehen mit opt ausgewertet
+                $varValue = "";
+                break;
             case 'postHtml':
                 $this->import('Contao\Input');
                 $varValue = $this->Input->postHtml($arrTag[1]);

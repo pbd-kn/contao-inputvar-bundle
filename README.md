@@ -4,16 +4,17 @@ Contao is an Open Source PHP Content Management System for people who want a
 professional website that is easy to maintain. Visit the [project website][1]
 for more information.
 
-inputvar stellt inserttags zum lesen von GET POST und SESSION Varibale zur Verfuegung
-und zum setzten von Postvariablen
+inputvar stellt inserttags zum lesen und schreiben von GET POST und SESSION Varibale zur Verfuegung
 
-{{get::var[::opt]}}
-{{post::var[::opt]}}
-{{posthtml::var[::opt]}}
-{{postraw::var[::opt]}}
-{{cookie::cookie[::opt]}}
-{{session::var[::opt]}}
-{{setpost::var::value}
+{{get::var[::opt]}}                    // variable aus _GET
+{{post::var[::opt]}}                   // variable aus _POST
+{{posthtml::var[::opt]}}               // variable aus _POST (belaesst erlaubte HTML-Tags im Wert)
+{{postraw::var[::opt]}}                // variable aus _POST (ohne grosse Sicherheitsueberpruefung -> UNSICHER!)
+{{cookie::cookie[::opt]}}              // variable aus _COOKIE
+{{session::var[::opt]}}                // variable aus _SESSION
+{{setpost::var::value}                 // setzt variable in _POST 
+{{setget::var::value}                  // setzt variable in _GET
+{{setcookie::var::value}               // setzt variable in _COOKIE
 
 Gueltige FunktionsOptions
 
