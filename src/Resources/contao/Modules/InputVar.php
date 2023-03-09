@@ -50,6 +50,7 @@ class InputVar extends \contao\Frontend
                 $this->import('Contao\Input');
                 $this->Input->setGet($arrTag[1],$arrTag[2]);
                 $varValue = "Tag1 ".$arrTag[1]." tag2 ".$arrTag[2];
+                $varValue = "";
                 $arrTag[2]="";          // damit nicht aus versehen mit opt ausgewertet
                 break;
 
