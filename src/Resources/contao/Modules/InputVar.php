@@ -49,8 +49,8 @@ class InputVar extends \contao\Frontend
                 if ('' === $arrTag[2]) return false;
                 $this->import('Contao\Input');
                 $this->Input->setGet($arrTag[1],$arrTag[2]);
+                $varValue = "Tag1 ".$arrTag[1]." tag2 ".$arrTag[2];
                 $arrTag[2]="";          // damit nicht aus versehen mit opt ausgewertet
-                $varValue = "";
                 break;
 
             case 'setcookie':
