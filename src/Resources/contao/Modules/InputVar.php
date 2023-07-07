@@ -85,8 +85,7 @@ class InputVar extends \contao\Frontend
             default:
                 return false;
         }
-        if ('' === $arrTag[2]) {}
-        else {
+        if (isset($arrTag[2])) {
           switch ($arrTag[2]) {
             case 'mysql_real_escape_string':
             case 'addslashes':
