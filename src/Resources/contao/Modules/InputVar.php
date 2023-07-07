@@ -85,8 +85,9 @@ class InputVar extends \contao\Frontend
             default:
                 return false;
         }
-
-        switch ($arrTag[2]) {
+        if ('' === $arrTag[2]) {}
+        else {
+          switch ($arrTag[2]) {
             case 'mysql_real_escape_string':
             case 'addslashes':
             case 'stripslashes':
@@ -124,6 +125,7 @@ class InputVar extends \contao\Frontend
             case 'number_format_2':
                 $varValue = number_format($varValue, 2, $GLOBALS['TL_LANG']['MSC']['decimalSeparator'], $GLOBALS['TL_LANG']['MSC']['thousandsSeparator']);
                 break;
+          }
         }
 
         return \is_array($varValue) ? implode(', ', $varValue) : $varValue;
