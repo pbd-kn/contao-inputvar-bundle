@@ -22,7 +22,7 @@ class InputVar extends \contao\Frontend
     {
         $arrTag = explode('::', $strTag);
 
-        if ('' === $arrTag[1]) {
+        if (!isset( $arrTag[1])) {
             return false;
         }
 
@@ -38,7 +38,7 @@ class InputVar extends \contao\Frontend
                 break;
             case 'setpost':
                 //$_POST Variable setzen
-                if ('' === $arrTag[2]) return false;
+                if (!isset( $arrTag[2])) return false;
                 $this->import('Contao\Input');
                 $this->Input->setPost($arrTag[1],$arrTag[2]);
                 $arrTag[2]="";          // damit nicht aus versehen mit opt ausgewertet
@@ -46,7 +46,7 @@ class InputVar extends \contao\Frontend
                 break;
             case 'setget':
                 //$_GET Variable setzen
-                if ('' === $arrTag[2]) return false;
+                if (!isset( $arrTag[2])) return false;
                 $this->import('Contao\Input');
                 $this->Input->setGet($arrTag[1],$arrTag[2]);
                 $varValue = "Tag1 ".$arrTag[1]." tag2 ".$arrTag[2];
@@ -56,7 +56,7 @@ class InputVar extends \contao\Frontend
 
             case 'setcookie':
                 //$_COOKIE Variable setzen
-                if ('' === $arrTag[2]) return false;
+                if (!isset( $arrTag[2])) return false;
                 $this->import('Contao\Input');
                 $this->Input->cookie($arrTag[1],$arrTag[2]);
                 $arrTag[2]="";          // damit nicht aus versehen mit opt ausgewertet
