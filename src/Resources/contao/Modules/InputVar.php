@@ -57,6 +57,18 @@ class InputVar extends \contao\Frontend
         ];
         return strtr($value, $replacements);
     }
+    
+    /**
+     * Convert a numeric string with comma as decimal separator to a float.
+     *
+     * @param string $value The numeric string
+     * @return float The converted float value
+     */
+    private function convertStringToFloat($value)
+    {
+        $value = str_replace(',', '.', $value);
+        return (float)$value;
+    }
 
     public function replaceInputVars($strTag)
     {
@@ -123,6 +135,8 @@ class InputVar extends \contao\Frontend
                 break;
 
             default:
+                // Log unknown flags
+                System::log('Unknown insert tag flag: ' . $arrTag[2], __METHOD__, TL_ERROR);
                 return false;
         }
         
