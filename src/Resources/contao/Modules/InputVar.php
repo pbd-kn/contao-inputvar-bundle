@@ -16,8 +16,60 @@ declare(strict_types=1);
 
 namespace PBDKN\ContaoInputVarBundle\Resources\contao\Modules;
 
+use Contao\System;
+
 class InputVar extends \contao\Frontend
 {
+  /**
+     * Replace hexadecimal umlauts with their corresponding UTF-8 representations.
+     *
+     * @param string $value The input string
+     * @return string The string with replaced umlauts
+     */
+    private function replaceHexUmlauts($value)
+    {
+        $replacements = [
+            // First replace longer sequences
+            "\xC2\xB4" => '´', // ´
+            "\xC2\xA7" => '§', // §
+            "\xC2\xB0" => '°',  // °
+            
+            // Then replace single-byte sequences
+            "\xE4" => 'ä', // ä
+            "\xC4" => 'Ä', // Ä
+            "\xF6" => 'ö', // ö
+            "\xD6" => 'Ö', // Ö
+            "\xFC" => 'ü', // ü
+            "\xDC" => 'Ü', // Ü
+            "\xDF" => 'ß', // ß
+            "\xE9" => 'é', // é
+            "\xE8" => 'è', // è
+            "\xEA" => 'ê', // ê
+            "\xC9" => 'É', // É
+            "\xC8" => 'È', // È
+            "\xCA" => 'Ê', // Ê
+            "\xE1" => 'á', // á
+            "\xE0" => 'à', // à
+            "\xE2" => 'â', // â
+            "\xC1" => 'Á', // Á
+            "\xC0" => 'À', // À
+            "\xC2" => 'Â', // Â
+        ];
+        return strtr($value, $replacements);
+    }
+    
+    /**
+     * Convert a numeric string with comma as decimal separator to a float.
+     *
+     * @param string $value The numeric string
+     * @return float The converted float value
+     */
+    private function convertStringToFloat($value)
+    {
+        $value = str_replace(',', '.', $value);
+        return (float)$value;
+    }
+
     public function replaceInputVars($strTag)
     {
         $arrTag = explode('::', $strTag);
@@ -29,9 +81,9 @@ class InputVar extends \contao\Frontend
         switch ($arrTag[0]) {
             case 'get':
                 $this->import('Contao\Input');
-                $varValue = $this->Input->get($arrTag[1]);
+                $varValue = $this->Input->get($arrTag[1]);  
+                  // Log the value to the error log                          
                 break;
-
             case 'post':
                 $this->import('Contao\Input');
                 $varValue = $this->Input->post($arrTag[1]);
@@ -83,10 +135,13 @@ class InputVar extends \contao\Frontend
                 break;
 
             default:
+                // Log unknown flags
+                System::log('Unknown insert tag flag: ' . $arrTag[2], __METHOD__, TL_ERROR);
                 return false;
         }
-        if (isset($arrTag[2])) {
-          switch ($arrTag[2]) {
+        
+        if (isset($arrTag[2])) {          
+          switch (($arrTag[2])) {            
             case 'mysql_real_escape_string':
             case 'addslashes':
             case 'stripslashes':
@@ -118,15 +173,30 @@ class InputVar extends \contao\Frontend
                 break;
 
             case 'number_format':
-                $varValue = number_format($varValue, 0, $GLOBALS['TL_LANG']['MSC']['decimalSeparator'], $GLOBALS['TL_LANG']['MSC']['thousandsSeparator']);
+                if (is_numeric($varValue)) {
+                    $varValue = number_format((float)$varValue, 0, $GLOBALS['TL_LANG']['MSC']['decimalSeparator'], $GLOBALS['TL_LANG']['MSC']['thousandsSeparator']);
+                } else {
+                    $varValue = number_format($this->convertStringToFloat($varValue), 0, $GLOBALS['TL_LANG']['MSC']['decimalSeparator'], $GLOBALS['TL_LANG']['MSC']['thousandsSeparator']);
+                }
                 break;
 
             case 'number_format_2':
-                $varValue = number_format($varValue, 2, $GLOBALS['TL_LANG']['MSC']['decimalSeparator'], $GLOBALS['TL_LANG']['MSC']['thousandsSeparator']);
+                if (is_numeric($varValue)) {
+                    $varValue = number_format((float)$varValue, 2, $GLOBALS['TL_LANG']['MSC']['decimalSeparator'], $GLOBALS['TL_LANG']['MSC']['thousandsSeparator']);
+                } else {
+                    $varValue = number_format($this->convertStringToFloat($varValue), 2, $GLOBALS['TL_LANG']['MSC']['decimalSeparator'], $GLOBALS['TL_LANG']['MSC']['thousandsSeparator']);
+                }
+                break;
+
+                    case 'ANSI':                     
+                  if (!empty($varValue)) {
+                      $varValue = $this->replaceHexUmlauts($varValue);
+                      // System::log('InputVar GET (Coded): ' . $varValue, __METHOD__, TL_ERROR);      
+                  }
                 break;
           }
         }
-
+                
         return \is_array($varValue) ? implode(', ', $varValue) : $varValue;
     }
 }
