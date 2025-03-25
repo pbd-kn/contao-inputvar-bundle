@@ -188,7 +188,7 @@ class InputVar extends \contao\Frontend
                 }
                 break;
 
-                    case 'ANSI':                     
+            case 'ANSI':                     
                   if (!empty($varValue)) {
                       $varValue = $this->replaceHexUmlauts($varValue);
                       // System::log('InputVar GET (Coded): ' . $varValue, __METHOD__, TL_ERROR);      

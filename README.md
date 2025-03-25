@@ -32,6 +32,6 @@ strlen, strrev
 
 decodeEntities, encodeEmail, number_format, number_format_2
 
-
+ANSI wandelt utf8
 
 
