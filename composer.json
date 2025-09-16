@@ -10,10 +10,6 @@
             "homepage": "https://github.com/leofeyer"
         },
         {
-            "name": "Contao Community",
-            "homepage": "https://contao.org/contributors"
-        },
-        {
             "name": "pbd-kn",
             "email": "pb-contao@gmx.de",
             "role": "Developer"
