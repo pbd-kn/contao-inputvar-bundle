@@ -15,22 +15,10 @@ declare(strict_types=1);
  */
 
 /* 
- * if (class_exists(\Contao\Input::class) && method_exists(\Contao\Input::class, 'getInstance')) {
-    // Contao 4 & 5, wenn der Input-Service verfügbar ist
-    $input = \Contao\Input::getInstance();
-    $varValue = $input->get($arrTag[1]);
-   }
-   läuft unter Contao 4.13, aber NICHT unter Contao 5.3 – und zwar aus folgendem Grund:
-
-   In Contao 4.13 gibt es \Contao\Input::getInstance() tatsächlich noch.
-    Dein Code funktioniert.
-
-   In Contao 5 wurde Input::getInstance() entfernt. 
-   Dort arbeitet man nur noch über den Symfony-Request ($requestStack->getCurrentRequest()->query->get('...')).
-   Deshalb liefert method_exists(\Contao\Input::class, 'getInstance') unter 5.3 false zurück. 
-   Dein Code wird also nicht ausgeführt.
- * code wurde nach Angaben von chatgpt umgestellt
- * Peter
+ * Umgestellt auf contao 5. läuft mit contao 4.13 und contao 5.3
+ * Dank an Steffen Frey
+ * Version ab 2.0.1
+ * Logger wurde auf Contao 5 angepasst, 24.9.25 quapla
 */
 
 namespace PBDKN\ContaoInputVarBundle\Resources\contao\Modules;
@@ -39,6 +27,16 @@ use Contao\System;
 
 class InputVar extends \Contao\Frontend
 {
+    /**
+     * Replace old Logger
+     */
+    private ?LoggerInterface $logger;
+
+    public function __construct(?LoggerInterface $logger = null)
+    {
+        $this->logger = $logger;
+    }
+ 
     /**
      * Replace hexadecimal umlauts with their corresponding UTF-8 representations.
      *
@@ -201,7 +199,10 @@ class InputVar extends \Contao\Frontend
                 break;
 
             default:
-                System::getContainer()->get('logger')->error('Unknown insert tag flag: ' . ($arrTag[2] ?? ''), ['source' => __METHOD__]);
+                if ($this->logger) {
+                  $this->logger->error('Unknown insert tag flag: ' . ($arrTag[2] ?? ''), ['source' => __METHOD__]);
+                }
+
                 return false;
         }
 
