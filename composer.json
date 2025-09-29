@@ -1,7 +1,7 @@
 {
     "name": "pbd-kn/contao-inputvar-bundle",
     "type": "contao-bundle",
-    "description": "get/set Input Variables",
+    "description": "get/set Input Variables ",
     "homepage": "https://contao.org",
     "license": "LGPL-3.0-or-later",
     "authors": [
