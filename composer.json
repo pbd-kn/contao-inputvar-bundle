@@ -1,5 +1,5 @@
 {
-    "name":  "pbd-kn/contao-inputvar-bundle",
+    "name": "pbd-kn/contao-inputvar-bundle",
     "type": "contao-bundle",
     "description": "get/set Input Variables ",
     "homepage": "https://contao.org",
