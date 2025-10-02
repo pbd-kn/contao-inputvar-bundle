@@ -5,15 +5,12 @@
     "homepage": "https://contao.org",
     "license": "LGPL-3.0-or-later",
     "authors": [
-        {
-            "name": "Leo Feyer",
-            "homepage": "https://github.com/leofeyer"
-        },
-        {
-            "name": "pbd-kn",
-            "email": "pb-contao@gmx.de",
-            "role": "Developer"
-        }
+      {
+        "name": "pbd-kn",
+        "email": "pb-contao@gmx.de",
+        "role": "Developer",
+        "homepage": "https://github.com/pbd-kn"
+      }
     ],
     "support": {
         "email": "pb-contao@gmx.de",
