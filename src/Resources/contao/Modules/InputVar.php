@@ -19,6 +19,7 @@ declare(strict_types=1);
  * Dank an Steffen Frey
  * Version ab 2.0.1
  * Logger wurde auf Contao 5 angepasst, 24.9.25 quapla
+ * logger wieder entfenrt da er ich mit teminal24 in Konflikt befindet
 */
 
 namespace PBDKN\ContaoInputVarBundle\Resources\contao\Modules;
@@ -27,14 +28,9 @@ use Contao\System;
 
 class InputVar extends \Contao\Frontend
 {
-    /**
-     * Replace old Logger
-     */
-    private ?LoggerInterface $logger;
 
-    public function __construct(?LoggerInterface $logger = null)
+    public function __construct()
     {
-        $this->logger = $logger;
     }
  
     /**
@@ -199,10 +195,6 @@ class InputVar extends \Contao\Frontend
                 break;
 
             default:
-                if ($this->logger) {
-                  $this->logger->error('Unknown insert tag flag: ' . ($arrTag[2] ?? ''), ['source' => __METHOD__]);
-                }
-
                 return false;
         }
 
